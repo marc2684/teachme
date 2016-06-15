@@ -7,9 +7,8 @@ use Faker\Factory as Faker;
 class UserTableSeeder extends Seeder {
 
     public function run(){
-        $this->createUsers(50);
-
         $this->createAdmin();
+        $this->createUsers(50);
     }
 
     private function createAdmin()
@@ -29,8 +28,8 @@ class UserTableSeeder extends Seeder {
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'password' => 'secret'
-            ])
+                'password' => bcrypt('secret')
+            ]);
         }
     }
 
