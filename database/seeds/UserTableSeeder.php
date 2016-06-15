@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder {
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'password' => 'secret'
-            ])
+            ]);
         }
 
         $this->createAdmin();
